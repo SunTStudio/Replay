@@ -21,6 +21,7 @@
 
       <!-- Style -->
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/music.css">    
 
     <title>Replay!</title>
   </head>
@@ -286,19 +287,78 @@
     <!-- Footer End -->
 
     <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              ...
+              <script src="https://kit.fontawesome.com/cdff2ab099.js" crossorigin="anonymous"></script>
+                <div class="container">
+                  <div class="music-player">
+                    <nav>
+                      <div class="circle">
+                        <i class="fa-solid fa-angle-left"></i>
+                      </div>
+                      <div class="circle">
+                        <i class="fa-solid fa-bars"></i>
+                      </div>
+                    </nav>
+                    <img src="img/modalprev.jpg" class="song-img">
+                    <h1>See You Again</h1>
+                    <p>Luis Fonsi ls diperios</p>
+
+
+                    <audio id="song">
+                      <source src="audio/Pokemon Omega Ruby & Alpha Sapphire OST.mp3" type="audio/mpeg">
+                    </audio>
+                    <input type="range" value="0" id="progress">
+
+                    <div class="controls">
+                      <div><i class="fa-solid fa-backward"></i></div>
+                      <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                      <div><i class="fa-solid fa-forward"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <script type="text/javascript">
+                  let progress = document.getElementById("progress");
+                  let song = document.getElementById("song");
+                  let ctrlIcon = document.getElementById("ctrlIcon");
+
+                  song.onloadedmetadata = function() {
+                    progress.max= song.duration;
+                    progress.value= song.currentTime;
+                  }
+                  function playPause() {
+                    if(ctrlIcon.classList.contains("fa-pause")){
+                      song.pause();
+                      ctrlIcon.classList.remove("fa-pause");
+                      ctrlIcon.classList.add("fa-play");
+                    }
+                    else{
+                      song.play();
+                      ctrlIcon.classList.add("fa-pause");
+                      ctrlIcon.classList.remove("fa-play");
+                    }
+                  }
+
+                  if(song.play()){
+                    setInterval(()=>{
+                      progress.value = song.currentTime;
+                    },500);
+                  }
+
+                  progress.onchange = function(){
+                    song.play();
+                    song.currentTime = progress.value;
+                    ctrlIcon.classList.add("fa-pause");
+                    ctrlIcon.classList.remove("fa-play");
+                  }
+
+                </script>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
