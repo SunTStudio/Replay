@@ -295,7 +295,7 @@ body {
   margin-right: 1rem;
 }
 
-.download > img {
+.imgReplay {
   position: absolute;
   bottom: -12px;
   right: 0;
@@ -445,5 +445,13 @@ body {
     }
     #burger {
       display: block;
+    }
+    .imgReplay {
+      position: absolute;
+      bottom: -12px;
+      right: 0;
+      height: 108%;
+      z-index: -1;
+      opacity: 50%;
     }
   }
