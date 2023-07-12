@@ -9,7 +9,6 @@
   box-sizing: border-box;
   outline: none;
   border: none;
-  color: var(--primary);
   text-decoration: none;
 }
 
@@ -387,6 +386,13 @@ body {
   }
 
   /* Footer End */
+
+  /* Modal */
+  #modalLangganan{
+    color: black; 
+  }
+
+  /* Modal End */
 
   /* Media Query */
 
