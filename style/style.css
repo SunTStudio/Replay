@@ -369,21 +369,41 @@ body {
   justify-content: space-between;
 }
 
+.footer .menu-footer a {
+}
+
+.footer .menu-footer a:hover {
+  color: white;
+}
+
+.footer .menu-footer a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid white;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.footer .menu-footer a:hover::after {
+  transform: scaleX(0.5);
+}
+
 /* .footer .menu-footer a {
   gap: 1rem;
   } */
 
-  hr {
-    border: 1px black solid;
-    margin: 2rem 0;
-  }
+hr {
+  border: 1px black solid;
+  margin: 2rem 0;
+}
 
-  .footer .footer-buttom {
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.footer .footer-buttom {
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
   /* Footer End */
 
