@@ -377,38 +377,64 @@
     <div class="container-fluid justify-content-center text-light">
       <div class="row mb-5">
         <div class="col">
-          <img src="img/logo.png" class="img-fluid" width="20%" alt="">
+          <img src="img/logo.png" class="img-fluid" width="20%" alt="" />
         </div>
       </div>
       <div class="row menu-footer">
         <div class="col-lg-2 col-sm-6">
-          <p class="pointer">Tentang</p>
+          <a>Tentang</a>
         </div>
         <div class="col-lg-2 col-sm-6">
-          <p class="pointer">Help Center</p>
+          <a>Help Center</a>
         </div>
         <div class="col-lg-2 col-sm-6">
-          <p class="pointer">FAQ</p>
+          <a>FAQ</a>
         </div>
         <div class="col-lg-2 col-sm-6">
-          <p class="pointer">Term</p>
+          <a
+          data-bs-toggle="modal"
+          data-bs-target="#modalTerm"
+          style="cursor: pointer"
+          >Langganan</a
+          >
         </div>
         <div class="col-lg-2 col-sm-6">
-          <p class="pointer">Dukungan</p>
+          <a data-bs-toggle="modal" data-bs-target="#modalDukungan" style="cursor: pointer
+          ;">Dukungan</a>
         </div>
         <div class="col-lg-2 col-sm-6">
-          <p class="pointer">Pemutar Web</p>
+          <a>Pemutar Web</a>
         </div>
       </div>
-      <hr/>
+      <hr />
       <div class="row">
         <div class="col footer-buttom">
           <h3>@2023 REPLAY</h3>
           <div class="footer-sosmed">
-            <img src="img/sosmed_1.png" class="img-fluid" width="15%" alt="facebook">
-            <img src="img/sosmed_2.png" class="img-fluid" width="15%" alt="instagram">
-            <img src="img/sosmed_3.png" class="img-fluid" width="15%" alt="twitter">
-            <img src="img/sosmed_4.png" class="img-fluid" width="15%" alt="youtube">
+            <img
+            src="img/sosmed_1.png"
+            class="img-fluid"
+            width="15%"
+            alt="facebook"
+            />
+            <img
+            src="img/sosmed_2.png"
+            class="img-fluid"
+            width="15%"
+            alt="instagram"
+            />
+            <img
+            src="img/sosmed_3.png"
+            class="img-fluid"
+            width="15%"
+            alt="twitter"
+            />
+            <img
+            src="img/sosmed_4.png"
+            class="img-fluid"
+            width="15%"
+            alt="youtube"
+            />
           </div>
         </div>
       </div>
@@ -440,154 +466,259 @@
 
 
               <audio id="song">
-                </audio>
-                <input type="range" value="0" id="progress">
+              </audio>
+              <input type="range" value="0" id="progress">
 
-                <div class="controls">
-                  <div><i class="fa-solid fa-backward"></i></div>
-                  <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
-                  <div><i class="fa-solid fa-forward"></i></div>
-                </div>
+              <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div><i class="fa-solid fa-forward"></i></div>
               </div>
             </div>
-            <script type="text/javascript">
-              let progress = document.getElementById("progress");
-              let song = document.getElementById("song");
-              let ctrlIcon = document.getElementById("ctrlIcon");
+          </div>
+          <script type="text/javascript">
+            let progress = document.getElementById("progress");
+            let song = document.getElementById("song");
+            let ctrlIcon = document.getElementById("ctrlIcon");
 
-              song.onloadedmetadata = function() {
-                progress.max= song.duration;
-                progress.value= song.currentTime;
+            song.onloadedmetadata = function() {
+              progress.max= song.duration;
+              progress.value= song.currentTime;
+            }
+            function playPause() {
+              if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
               }
-              function playPause() {
-                if(ctrlIcon.classList.contains("fa-pause")){
-                  song.pause();
-                  ctrlIcon.classList.remove("fa-pause");
-                  ctrlIcon.classList.add("fa-play");
-                }
-                else{
-                  song.play();
-                  ctrlIcon.classList.add("fa-pause");
-                  ctrlIcon.classList.remove("fa-play");
-                }
-              }
-
-              if(song.play()){
-                setInterval(()=>{
-                  progress.value = song.currentTime;
-                },500);
-              }
-
-              progress.onchange = function(){
+              else{
                 song.play();
-                song.currentTime = progress.value;
                 ctrlIcon.classList.add("fa-pause");
                 ctrlIcon.classList.remove("fa-play");
               }
-            </script>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal End -->
+            }
 
-    <!-- Modal Langganan -->
+            if(song.play()){
+              setInterval(()=>{
+                progress.value = song.currentTime;
+              },500);
+            }
 
-    <div class="modal fade" id="modalLangganan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body bg-light">
-            <section id="modalSubs" style=" 
-            margin: 1.4rem 10%;
-            padding: 2rem;
-            border-radius: 0.5rem;">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-6">
-                  <p class="h5 mt-5 text-dark">Isi Data dibawah Untuk Berlangganan</p>
-                  <form>
-                    <div class="mb-3">
-                      <label for="namaLengkap" class="form-label text-dark">Nama Lengkap</label>
-                      <input type="email" class="form-control" id="namaLengkap" aria-describedby="emailHelp" required>
-                    </div>
-                    <label for="datepicker" class="form-label text-dark">Masukan Tanggal Lahir</label>
-                    <div class="input-group mb-3 date" id="datepicker">
-                      <input type="text" class="form-control" id="date" aria-describedby="emailHelp" name="date" required>
-                      <span class="input-group-append" style="cursor: pointer;">
-                        <span class="input-group-text bg-light d-block">
-                          <i class="fa fa-calendar"></i>
-                        </span>
-                      </span>
-
-                    </div>
-                    <div class="mb-3">
-                      <label for="namaLengkap" class="form-label text-dark">Email</label>
-                      <input type="email" class="form-control" id="namaLengkap" aria-describedby="emailHelp" required>
-                    </div>
-                    <label for="datepicker" class="form-label text-dark">Pilih Metode Pembayaran</label>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1"><img src="img/LinkAja.png" class="img-fluid" width="10%"></label>
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1"><img src="img/Gopay.png" class="img-fluid" width="25%"></label>
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1"><img src="img/Dana.webp" class="img-fluid" width="20%"></label>
-                    </div>
-
-                  </div>
-                  <div class="col-lg-6 ps-4 pe-4 " style="background-color: #F0F0FF; border-radius: 0.5rem;">
-                    <p class="h5 mt-5">Langganan untuk</p>
-                    <p class="h2" id="paketHari">Paket Premium 30 Hari</p>
-                    <br>
-                    <p><strong id="rincianPaket">Paket Premium 30 Hari</strong><span id="hargaPaket" style="float: right;">40.000 IDR</span></p>
-                    <p><small id="kadaluarsa">*Masa Berlaku Langganan 30 Hari</small></p>
-                    <p><strong>Diskon</strong><span style="float: right;" id="diskon">-10.000 IDR</span></p>
-                    <p><strong>PPN 10%</strong><span style="float: right;" id="ppn">3000 IDR</span></p>
-                    <hr>
-                    <p><strong>Total</strong><span style="float: right;font-weight: bold;" id="total">33.000 IDR</span></p>
-                    <br>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1"> <small>Saya Setuju dengan seluruh kebijakan aplikasi ini</small> </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-5">Checkout Paket Langganan</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </section>
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-          <script>
-            $(function(){
-              $('#datepicker').datepicker();
-            });
+            progress.onchange = function(){
+              song.play();
+              song.currentTime = progress.value;
+              ctrlIcon.classList.add("fa-pause");
+              ctrlIcon.classList.remove("fa-play");
+            }
           </script>
+        </div>
+        <div class="modal-footer">
         </div>
       </div>
     </div>
   </div>
+  <!-- Modal End -->
 
-  <!-- Modal Langganan End -->
+  <!-- Modal Langganan -->
 
-  <!-- Script Icon -->
-  <script>
-    feather.replace();
-  </script>
-  <script type="text/javascript" src="JS/script.js"></script>
-  <!-- Script Bootstrap -->
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <div class="modal fade" id="modalLangganan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-light">
+          <section id="modalSubs" style=" 
+          margin: 1.4rem 10%;
+          padding: 2rem;
+          border-radius: 0.5rem;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="h5 mt-5 text-dark">Isi Data dibawah Untuk Berlangganan</p>
+                <form>
+                  <div class="mb-3">
+                    <label for="namaLengkap" class="form-label text-dark">Nama Lengkap</label>
+                    <input type="email" class="form-control" id="namaLengkap" aria-describedby="emailHelp" required>
+                  </div>
+                  <label for="datepicker" class="form-label text-dark">Masukan Tanggal Lahir</label>
+                  <div class="input-group mb-3 date" id="datepicker">
+                    <input type="text" class="form-control" id="date" aria-describedby="emailHelp" name="date" required>
+                    <span class="input-group-append" style="cursor: pointer;">
+                      <span class="input-group-text bg-light d-block">
+                        <i class="fa fa-calendar"></i>
+                      </span>
+                    </span>
+
+                  </div>
+                  <div class="mb-3">
+                    <label for="namaLengkap" class="form-label text-dark">Email</label>
+                    <input type="email" class="form-control" id="namaLengkap" aria-describedby="emailHelp" required>
+                  </div>
+                  <label for="datepicker" class="form-label text-dark">Pilih Metode Pembayaran</label>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"><img src="img/LinkAja.png" class="img-fluid" width="10%"></label>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"><img src="img/Gopay.png" class="img-fluid" width="25%"></label>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"><img src="img/Dana.webp" class="img-fluid" width="20%"></label>
+                  </div>
+
+                </div>
+                <div class="col-lg-6 ps-4 pe-4 " style="background-color: #F0F0FF; border-radius: 0.5rem;">
+                  <p class="h5 mt-5">Langganan untuk</p>
+                  <p class="h2" id="paketHari">Paket Premium 30 Hari</p>
+                  <br>
+                  <p><strong id="rincianPaket">Paket Premium 30 Hari</strong><span id="hargaPaket" style="float: right;">40.000 IDR</span></p>
+                  <p><small id="kadaluarsa">*Masa Berlaku Langganan 30 Hari</small></p>
+                  <p><strong>Diskon</strong><span style="float: right;" id="diskon">-10.000 IDR</span></p>
+                  <p><strong>PPN 10%</strong><span style="float: right;" id="ppn">3000 IDR</span></p>
+                  <hr>
+                  <p><strong>Total</strong><span style="float: right;font-weight: bold;" id="total">33.000 IDR</span></p>
+                  <br>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"> <small>Saya Setuju dengan seluruh kebijakan aplikasi ini</small> </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-5">Checkout Paket Langganan</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+        <script>
+          $(function(){
+            $('#datepicker').datepicker();
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Langganan End -->
+
+<!-- Modal ketentuan start -->
+<div
+class="modal fade"
+id="modalTerm"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-4" id="exampleModalLabel" style="font-weight: 700;">Ketentuan</h1>
+      <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <h2 class="modal-title fs-5 pb-1 pt-2" style="font-weight: 600;">Pembuatan akun Replay!</h2>
+      <p>
+        Anda perlu membuat akun Replay! untuk menggunakan semua atau
+        sebagian Layanan Replay!. Nama pengguna dan kata sandi Anda hanya
+        untuk penggunaan pribadi dan harus dijaga kerahasiaannya. Anda
+        memahami bahwa Anda bertanggung jawab atas semua penggunaan
+        (termasuk penggunaan yang tidak sah) nama pengguna dan kata sandi
+        Anda. Beri tahu Layanan Pelanggan sesegera mungkin jika nama
+        pengguna dan kata sandi Anda hilang atau dicuri, atau jika Anda
+        meyakini telah terjadi akses yang tidak sah ke akun Anda. Spotify
+        dapat mengklaim kembali, atau mengharuskan Anda untuk mengubah,
+        nama pengguna Anda dengan alasan apa pun.
+      </p>
+
+      <h2 class="modal-title fs-5 pb-1 pt-2" style="font-weight: 600;"">Pembayaran</h2>
+      <p>
+      Tagihan Anda dapat membeli Langganan Berbayar secara langsung dari
+      Replay! atau melalui pihak ketiga, dengan: membayar biaya
+      langganan di muka atau setiap bulan atau interval berulang lainnya
+      yang diberitahukan kepada Anda sebelum melakukan pembelian; atau
+      pembayaran di muka yang memberi Anda akses ke Layanan Replay!
+      untuk jangka waktu tertentu ("Periode Prabayar"). Tarif pajak
+      dihitung berdasarkan informasi yang Anda berikan dan tarif yang
+      berlaku pada saat tagihan bulanan Anda. Jika Anda membeli akses ke
+      Langganan Berbayar melalui pihak ketiga, syarat dan ketentuan
+      terpisah dengan pihak ketiga tersebut dapat berlaku untuk akses
+      Anda ke Layanan Replay! selain Perjanjian ini. Jika Anda membeli
+      Langganan Berbayar menggunakan kode, kartu hadiah, penawaran
+      prabayar, atau penawaran lain yang diberikan atau dijual oleh atau
+      atas nama Replay! untuk mengakses Langganan Berbayar ("Kode"),
+      Anda dengan ini menyetujui Syarat Kartu Replay!. Perubahan harga
+      dan pajak Replay! dapat mengubah harga Langganan Berbayar,
+      termasuk biaya langganan, Periode Prabayar (untuk periode yang
+      belum dibayar), atau Kode (didefinisikan di atas), dari waktu ke
+      waktu dan akan memberitahukan perubahan harga tersebut kepada Anda
+      sebelumnya dengan pemberitahuan yang wajar. Perubahan harga akan
+      mulai berlaku di awal periode langganan berikutnya setelah tanggal
+      perubahan harga. Tunduk pada hukum yang berlaku, dengan terus
+      menggunakan Layanan Replay! setelah perubahan harga berlaku, Anda
+      akan menerima harga baru. Jika Anda tidak setuju dengan perubahan
+      harga, Anda berhak menolak perubahan tersebut dengan berhenti dari
+      Langganan Berbayar yang berlaku sebelum perubahan biaya
+      diberlakukan. Tarif pajak didasarkan pada tarif yang berlaku pada
+      saat tagihan bulanan Anda. Jumlah ini dapat berubah seiring waktu
+      dengan persyaratan pajak lokal di negara, negara bagian, wilayah,
+      atau bahkan kota Anda. Setiap perubahan tarif Pajak akan
+      diterapkan secara otomatis berdasarkan informasi akun yang Anda
+      berikan.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button
+    type="button"
+    class="btn btn-secondary"
+    data-bs-dismiss="modal"
+    >
+    Close
+  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ketentuan end -->
+
+<!-- Modal dukungan start -->
+<div class="modal fade" id="modalDukungan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="exampleModalLabel" style="font-weight: 700;">Dukungan</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="modal-title fs-5 mb-2 pt-2" style="font-weight: 600;">Apa yang bisa kami bantu?</h2>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cari disini">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal dukungan end -->
+
+<!-- Script Icon -->
+<script>
+  feather.replace();
+</script>
+<script type="text/javascript" src="JS/script.js"></script>
+<!-- Script Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
