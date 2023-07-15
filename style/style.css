@@ -1,6 +1,6 @@
 :root {
   --primary: #fff;
-  --second: #1c1e21;
+  --second: #1C1C1C;
 }
 
 * {
@@ -68,7 +68,6 @@ body {
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(1);
   }
-
 /* Navbar End */
 
 
@@ -200,6 +199,15 @@ body {
   opacity: 10%;
 }
 /* About End */
+
+/*Know*/
+#know .card-content {
+  text-decoration: none;
+  color: white;
+}
+
+/*Know End*/
+
 
 /* Subs Start */
 .subs {
