@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style/styleMP.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+  <script src="https://kit.fontawesome.com/cdff2ab099.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -31,7 +31,7 @@
                 </form>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
+                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Pengguna<i class="bi bi-person-square ms-3"></i></a>
@@ -198,6 +198,50 @@
                       <img src="img/preview4.jpg" class="img-fluid rounded mx-auto" width="60%">
                       <p class="h3 mt-4">Raise Your Flag</p>
                       <p>Man With A Mission <br><span><small>Sony Music</small></span></p>
+                      <audio id="song">
+                      </audio>
+                      <input type="range" value="0" id="progress">
+
+                      <div class="controls">
+                        <div><i class="fa-solid fa-backward"></i></div>
+                        <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                        <div><i class="fa-solid fa-forward"></i></div>
+                      </div>
+                      <script type="text/javascript">
+                        let progress = document.getElementById("progress");
+                        let song = document.getElementById("song");
+                        let ctrlIcon = document.getElementById("ctrlIcon");
+
+                        song.onloadedmetadata = function() {
+                          progress.max= song.duration;
+                          progress.value= song.currentTime;
+                        }
+                        function playPause() {
+                          if(ctrlIcon.classList.contains("fa-pause")){
+                            song.pause();
+                            ctrlIcon.classList.remove("fa-pause");
+                            ctrlIcon.classList.add("fa-play");
+                          }
+                          else{
+                            song.play();
+                            ctrlIcon.classList.add("fa-pause");
+                            ctrlIcon.classList.remove("fa-play");
+                          }
+                        }
+
+                        if(song.play()){
+                          setInterval(()=>{
+                            progress.value = song.currentTime;
+                          },500);
+                        }
+
+                        progress.onchange = function(){
+                          song.play();
+                          song.currentTime = progress.value;
+                          ctrlIcon.classList.add("fa-pause");
+                          ctrlIcon.classList.remove("fa-play");
+                        }
+                      </script>
                     </div>
                   </div>
                 </div>
@@ -207,7 +251,7 @@
               <!-- Top Singer End -->
 
               <!--  -->
-
+              <script src="https://kit.fontawesome.com/cdff2ab099.js" crossorigin="anonymous"></script>
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
             </body>
             </html>
