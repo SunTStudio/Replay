@@ -1,266 +1,706 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="img/tittle.png"/>
-  <title>Replay-Web Pemutar Musik</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style/styleMP.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <script src="https://kit.fontawesome.com/cdff2ab099.js" crossorigin="anonymous"></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="img/tittle.png" />
+    <title>Replay-Web Pemutar Musik</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
 
-  <!-- Header Start -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/cdff2ab099.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style/styleMP.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
 
-  <section id="header">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-10">
-          <nav class="navbar navbar-expand-lg border-bottom-dark" data-bs-theme="dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0;">
-                <form class="d-flex mt-1" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search The Music" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                </form>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pengguna<i class="bi bi-person-square ms-3"></i></a>
-                  </li>
-                </ul>
+    <section id="header">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <nav
+              class="navbar navbar-expand-lg border-bottom-dark"
+              data-bs-theme="dark"
+            >
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/logo.png" /></a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+                  style="flex-grow: 0"
+                >
+                  <form class="d-flex mt-1" role="search">
+                    <input
+                      class="form-control me-2"
+                      type="search"
+                      placeholder="Search The Music"
+                      aria-label="Search"
+                    />
+                    <button class="btn btn-outline-success" type="submit">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </form>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        aria-current="page"
+                        href="index.html"
+                        >Beranda</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"
+                        >Pengguna<i class="bi bi-person-square ms-3"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </nav>
-        </div>   
-      </div>
-    </div>
-  </section>
-
-  <!-- Header End -->
-
-  <!-- Trending Start -->
-
-  <section id="trending">
-    <div class="container-fluid">
-      <div class="row text-light justify-content-center">
-        <div class="col-10">
-          <p><strong>Music Trending Minggu Ini</strong></p>
-          <div class="tren-song">
-            <p class="display-3">Raise Your Flag</p>
-            <p><span class="h5">Man With A Mission</span><span class="ms-3">20 Milions Plays</span></p>
-            <button type="submit" class="btn btn-primary" onclick="mwam()">Dengarkan Sekarang</button>
+            </nav>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Trending End -->
+    <!-- Header End -->
 
-  <!-- Top Singer Start -->
+    <!-- Trending Start -->
 
-  <section id="song" class="mb-3">
-    <div class="container-fluid">
-      <div class="row justify-content-center text-light">
-        <div class="col-lg-7">
-          <div id="wishlist" style="background-color:#1C1C1C; border-radius: 0.3rem;" class="ps-4 pt-3 pe-4 pb-1">
-            <div class="row justify-content-center">
-              <p class="h5 mb-3">Top Singer</p>
-              <div class="col-2 text-center">
-                <img src="img/preview3.jpg" class="img-fluid rounded mx-auto mb-2" width="80%">
-                <p><strong>MWAM</strong><br>
-                  <small>20 Milions Plays</small></p>
-                </div>
-                <div class="col-2 text-center">
-                  <img src="img/preview5.jpg" class="img-fluid rounded mx-auto mb-2" width="80%">
-                  <p><strong>Ello</strong><br>
-                    <small>20 Milions Plays</small></p>
+    <section id="trending">
+      <div class="container-fluid">
+        <div class="row text-light justify-content-center">
+          <div class="col-10">
+            <p><strong>Music Trending Minggu Ini</strong></p>
+            <div class="tren-song">
+              <p class="display-3">Raise Your Flag</p>
+              <p>
+                <span class="h5">Man With A Mission</span
+                ><span class="ms-3">20 Milions Plays</span>
+              </p>
+              <button type="submit" class="btn btn-primary" onclick="mwam()">
+                Dengarkan Sekarang
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending End -->
+
+    <!-- Top Singer Start -->
+
+    <section id="song" class="mb-3">
+      <div class="container-fluid">
+        <div class="row justify-content-center text-light">
+          <div class="col-lg-7">
+            <div
+              id="wishlist"
+              style="background-color: #1c1c1c; border-radius: 0.3rem"
+              class="ps-4 pt-3 pe-4 pb-1"
+            >
+              <div class="row justify-content-center">
+                <p class="h5 mb-3">Top Singer</p>
+                <section
+                  class="splide"
+                  id="first-splide"
+                  aria-label="Splide Basic HTML Example"
+                >
+                  <div class="splide__track">
+                    <ul class="splide__list">
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>MWAM</strong><br />
+                            <small>20 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>Efek Kaca Spion</strong><br />
+                            <small>20 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>Tidak Tulus</strong><br />
+                            <small>15 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>JKW48</strong><br />
+                            <small>62 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>MBT_Shadow</strong><br />
+                            <small>28 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>Wali Songo</strong><br />
+                            <small>51 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>NDX</strong><br />
+                            <small>51 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>Ndarboy</strong><br />
+                            <small>51 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>Happy Asmara</strong><br />
+                            <small>51 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="text-center">
+                          <img
+                            src="img/preview3.jpg"
+                            class="img-fluid rounded mx-auto mb-2"
+                            width="80%"
+                          />
+                          <p>
+                            <strong>Guyon Bener</strong><br />
+                            <small>51 Milions Plays</small>
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <div class="col-2 text-center">
-                    <img src="img/preview4.jpg" class="img-fluid rounded mx-auto mb-2" width="80%">
-                    <p><strong>Ella Freya</strong><br>
-                      <small>15 Milions Plays</small></p>
-                    </div> 
-                    <div class="col-2 text-center">
-                      <img src="img/preview1.jpg" class="img-fluid rounded mx-auto mb-2" width="80%">
-                      <p><strong>JKT48</strong><br>
-                        <small>62 Milions Plays</small></p>
+                </section>
+              </div>
+            </div>
+
+            <!-- Genre & Top Music Start -->
+            <div id="genreAndTopMusic" class="mt-3">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div
+                    id="genre"
+                    style="background-color: #1c1c1c; border-radius: 0.3rem"
+                    class="ps-4 pt-3 pe-4 pb-1"
+                  >
+                    <h5 class="mb-3">Genre</h5>
+                    <div class="row mb-3">
+                      <div class="col-6 text-center">
+                        <p
+                          style="
+                            background-color: #b30000;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Jpop</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #003f8a;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Hiphop</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #0b8c2e;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Jazz</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #937d71;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Rock</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #381d3b;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Funk</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #84b64e;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Reggae</strong>
+                        </p>
                       </div>
-                      <div class="col-2 text-center">
-                        <img src="img/preview2.jpg" class="img-fluid rounded mx-auto mb-2" width="80%">
-                        <p><strong>Dewa19</strong><br>
-                          <small>89 Milions Plays</small></p>
-                        </div>
-                        <div class="col-2 text-center">
-                          <img src="img/preview3.jpg" class="img-fluid rounded mx-auto mb-2" width="80%">
-                          <p><strong>Aqours</strong><br>
-                            <small>42 Milions Plays</small></p>
-                          </div>
-                        </div>
+                      <div class="col-6 text-center">
+                        <p
+                          style="
+                            background-color: #97a417;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Kpop</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #475a4c;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Classic</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #165250;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Metal</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #69446c;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Indie</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #544346;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Techno</strong>
+                        </p>
+                        <p
+                          style="
+                            background-color: #565a59;
+                            border-radius: 0.2rem;
+                          "
+                        >
+                          <strong class="p-3">Rap</strong>
+                        </p>
                       </div>
-
-                      <!-- Genre & Top Music Start -->
-                      <div id="genreAndTopMusic" class="mt-3">
-                        <div class="row">
-                          <div class="col-lg-4">
-                            <div id="genre" style="background-color:#1C1C1C; border-radius: 0.3rem;" class="ps-4 pt-3 pe-4 pb-1">
-                              <h5 class="mb-3">Genre</h5>
-                              <div class="row mb-3">
-                                <div class="col-6 text-center">
-                                  <p style="background-color:#B30000 ; border-radius: 0.2rem"><strong class="p-3">Jpop</strong></p>
-                                  <p style="background-color:#003F8A ; border-radius: 0.2rem"><strong class="p-3">Hiphop</strong></p>
-                                  <p style="background-color:#0B8C2E ; border-radius: 0.2rem"><strong class="p-3">Jazz</strong></p>
-                                  <p style="background-color:#937D71 ; border-radius: 0.2rem"><strong class="p-3">Rock</strong></p>
-                                  <p style="background-color:#381D3B ; border-radius: 0.2rem"><strong class="p-3">Funk</strong></p>
-                                  <p style="background-color:#84B64E ; border-radius: 0.2rem"><strong class="p-3">Reggae</strong></p>
-                                </div>
-                                <div class="col-6 text-center">
-                                  <p style="background-color:#97A417 ; border-radius: 0.2rem"><strong class="p-3">Kpop</strong></p>
-                                  <p style="background-color:#475A4C ; border-radius: 0.2rem"><strong class="p-3">Classic</strong></p>
-                                  <p style="background-color:#165250 ; border-radius: 0.2rem"><strong class="p-3">Metal</strong></p>
-                                  <p style="background-color:#69446C ; border-radius: 0.2rem"><strong class="p-3">Indie</strong></p>
-                                  <p style="background-color:#544346 ; border-radius: 0.2rem"><strong class="p-3">Techno</strong></p>
-                                  <p style="background-color:#565A59 ; border-radius: 0.2rem"><strong class="p-3">Rap</strong></p>
-                                </div>
-                              </div> 
-                            </div>
-                          </div>
-                          <div class="col-lg-8">
-                            <div id="topMusic" style="background-color:#1C1C1C; border-radius: 0.3rem;" class="ps-4 pt-3 pe-4 pb-1">
-                              <p class="h5 mb-3">Top Music</p>
-                              <div class="row">
-                                <div class="col-lg-1 pt-2 text-end">01</div>
-                                <div class="col-lg-2 text-center">
-                                  <img src="img/preview3.jpg" class="img-fluid rounded mx-auto" width="90%">
-                                </div>
-                                <div class="col-lg-5 text-start">
-                                  <p class="fs-6"><strong>Raise Your Flag</strong><br><small>Man With A Mission</small></p>
-                                </div>
-                                <div class="col-lg-2 pt-2 text-center"><small>3:45</small></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-play-fill" style="cursor: pointer;"></i></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-plus-square"></i></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-lg-1 pt-2 text-end">02</div>
-                                <div class="col-lg-2 text-center">
-                                  <img src="img/preview1.jpg" class="img-fluid rounded mx-auto" width="90%">
-                                </div>
-                                <div class="col-lg-5 text-start">
-                                  <p class="fs-6"><strong>Rungkad</strong><br><small>Happy Asmara</small></p>
-                                </div>
-                                <div class="col-lg-2 pt-2 text-center"><small>3:02</small></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-play-fill" style="cursor: pointer;"></i></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-plus-square"></i></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-lg-1 pt-2 text-end">03</div>
-                                <div class="col-lg-2 text-center">
-                                  <img src="img/preview4.jpg" class="img-fluid rounded mx-auto" width="90%">
-                                </div>
-                                <div class="col-lg-5 text-start">
-                                  <p class="fs-6"><strong>Raise Your Flag</strong><br><small>Man With A Mission</small></p>
-                                </div>
-                                <div class="col-lg-2 pt-2 text-center"><small>3:45</small></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-play-fill" style="cursor: pointer;"></i></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-plus-square"></i></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-lg-1 pt-2 text-end">04</div>
-                                <div class="col-lg-2 text-center">
-                                  <img src="img/preview5.jpg" class="img-fluid rounded mx-auto" width="90%">
-                                </div>
-                                <div class="col-lg-5 text-start">
-                                  <p class="fs-6"><strong>Rungkad</strong><br><small>Happy Asmara</small></p>
-                                </div>
-                                <div class="col-lg-2 pt-2 text-center"><small>3:02</small></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-play-fill" style="cursor: pointer;"></i></div>
-                                <div class="col-lg-1 pt-2"><i class="bi bi-plus-square"></i></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Genre & Top Music End -->
-
-                    </div>
-                    <div class="col-lg-3 p-3 text-center" style="background-color:#1C1C1C; border-radius: 0.3rem;">
-                      <p class="pt-2"><strong class="mb-5">Music Player</strong><i class="bi bi-music-note-list" style="float: right;"></i></p>
-                      <br>
-                      <img src="img/preview4.jpg" class="img-fluid rounded mx-auto" width="60%">
-                      <p class="h3 mt-4">Raise Your Flag</p>
-                      <p>Man With A Mission <br><span><small>Sony Music</small></span></p>
-                      <audio id="songMusic" src="audio/Raise Your Flag.mp3">
-                      </audio>
-                      <input type="range" value="0" id="progress">
-
-                      <div class="controls">
-                        <div><i class="fa-solid fa-backward"></i></div>
-                        <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
-                        <div><i class="fa-solid fa-forward"></i></div>
-                      </div>
-                      <script type="text/javascript">
-                        let progress = document.getElementById("progress");
-                        let song = document.getElementById("songMusic");
-                        let ctrlIcon = document.getElementById("ctrlIcon");
-
-                        song.onloadedmetadata = function() {
-                          progress.max= song.duration;
-                          progress.value= song.currentTime;
-                        }
-                        function playPause() {
-                          if(ctrlIcon.classList.contains("fa-pause")){
-                            song.pause();
-                            ctrlIcon.classList.remove("fa-pause");
-                            ctrlIcon.classList.add("fa-play");
-                          }
-                          else{
-                            song.play();
-                            ctrlIcon.classList.add("fa-pause");
-                            ctrlIcon.classList.remove("fa-play");
-                          }
-                        }
-
-                        if(song.play()){
-                          setInterval(()=>{
-                            progress.value = song.currentTime;
-                          },500);
-                        }
-
-                        progress.onchange = function(){
-                          song.play();
-                          song.currentTime = progress.value;
-                          ctrlIcon.classList.add("fa-pause");
-                          ctrlIcon.classList.remove("fa-play");
-                        }
-                      </script>
                     </div>
                   </div>
                 </div>
-              </section>
+                <div class="col-lg-8">
+                  <div
+                    id="topMusic"
+                    style="background-color: #1c1c1c; border-radius: 0.3rem"
+                    class="ps-4 pt-3 pe-4 pb-1"
+                  >
+                    <p class="h5 mb-3">Top Music</p>
+                    <section
+                      class="splide"
+                      id="second-splide"
+                      aria-label="Splide Basic HTML Example"
+                    >
+                      <div class="splide__track">
+                        <ul class="splide__list">
+                          <li class="splide__slide">
+                            <div class="row">
+                              <div class="col-lg-1 pt-2 text-end">01</div>
+                              <div class="col-lg-2 text-center">
+                                <img
+                                  src="img/preview3.jpg"
+                                  class="img-fluid rounded mx-auto"
+                                  width="90%"
+                                />
+                              </div>
+                              <div class="col-lg-5 text-start">
+                                <p class="fs-6">
+                                  <strong>Raise Your Flag</strong><br /><small
+                                    >Man With A Mission</small
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-lg-2 pt-2 text-center">
+                                <small>3:45</small>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i
+                                  class="bi bi-play-fill"
+                                  style="cursor: pointer"
+                                ></i>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i class="bi bi-plus-square"></i>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="row">
+                              <div class="col-lg-1 pt-2 text-end">01</div>
+                              <div class="col-lg-2 text-center">
+                                <img
+                                  src="img/preview3.jpg"
+                                  class="img-fluid rounded mx-auto"
+                                  width="90%"
+                                />
+                              </div>
+                              <div class="col-lg-5 text-start">
+                                <p class="fs-6">
+                                  <strong>Raise Your Flag</strong><br /><small
+                                    >Man With A Mission</small
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-lg-2 pt-2 text-center">
+                                <small>3:45</small>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i
+                                  class="bi bi-play-fill"
+                                  style="cursor: pointer"
+                                ></i>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i class="bi bi-plus-square"></i>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="row">
+                              <div class="col-lg-1 pt-2 text-end">01</div>
+                              <div class="col-lg-2 text-center">
+                                <img
+                                  src="img/preview3.jpg"
+                                  class="img-fluid rounded mx-auto"
+                                  width="90%"
+                                />
+                              </div>
+                              <div class="col-lg-5 text-start">
+                                <p class="fs-6">
+                                  <strong>Raise Your Flag</strong><br /><small
+                                    >Man With A Mission</small
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-lg-2 pt-2 text-center">
+                                <small>3:45</small>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i
+                                  class="bi bi-play-fill"
+                                  style="cursor: pointer"
+                                ></i>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i class="bi bi-plus-square"></i>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="row">
+                              <div class="col-lg-1 pt-2 text-end">01</div>
+                              <div class="col-lg-2 text-center">
+                                <img
+                                  src="img/preview3.jpg"
+                                  class="img-fluid rounded mx-auto"
+                                  width="90%"
+                                />
+                              </div>
+                              <div class="col-lg-5 text-start">
+                                <p class="fs-6">
+                                  <strong>Raise Your Flag</strong><br /><small
+                                    >Man With A Mission</small
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-lg-2 pt-2 text-center">
+                                <small>3:45</small>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i
+                                  class="bi bi-play-fill"
+                                  style="cursor: pointer"
+                                ></i>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i class="bi bi-plus-square"></i>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="row">
+                              <div class="col-lg-1 pt-2 text-end">01</div>
+                              <div class="col-lg-2 text-center">
+                                <img
+                                  src="img/preview3.jpg"
+                                  class="img-fluid rounded mx-auto"
+                                  width="90%"
+                                />
+                              </div>
+                              <div class="col-lg-5 text-start">
+                                <p class="fs-6">
+                                  <strong>Raise Your Flag</strong><br /><small
+                                    >Man With A Mission</small
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-lg-2 pt-2 text-center">
+                                <small>3:45</small>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i
+                                  class="bi bi-play-fill"
+                                  style="cursor: pointer"
+                                ></i>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i class="bi bi-plus-square"></i>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="row">
+                              <div class="col-lg-1 pt-2 text-end">01</div>
+                              <div class="col-lg-2 text-center">
+                                <img
+                                  src="img/preview3.jpg"
+                                  class="img-fluid rounded mx-auto"
+                                  width="90%"
+                                />
+                              </div>
+                              <div class="col-lg-5 text-start">
+                                <p class="fs-6">
+                                  <strong>Raise Your Flag</strong><br /><small
+                                    >Man With A Mission</small
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-lg-2 pt-2 text-center">
+                                <small>3:45</small>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i
+                                  class="bi bi-play-fill"
+                                  style="cursor: pointer"
+                                ></i>
+                              </div>
+                              <div class="col-lg-1 pt-2">
+                                <i class="bi bi-plus-square"></i>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Genre & Top Music End -->
+          </div>
+          <div
+            class="col-lg-3 p-3 text-center"
+            style="background-color: #1c1c1c; border-radius: 0.3rem"
+          >
+            <p class="pt-2">
+              <strong class="mb-5">Music Player</strong
+              ><i class="bi bi-music-note-list" style="float: right"></i>
+            </p>
+            <br />
+            <img
+              src="img/preview4.jpg"
+              class="img-fluid rounded mx-auto"
+              width="60%"
+            />
+            <p class="h3 mt-4">Raise Your Flag</p>
+            <p>
+              Man With A Mission <br /><span><small>Sony Music</small></span>
+            </p>
+            <audio id="songMusic" src="audio/Raise Your Flag.mp3"></audio>
+            <input type="range" value="0" id="progress" />
 
+            <div class="controls">
+              <div><i class="fa-solid fa-backward"></i></div>
+              <div onclick="playPause()">
+                <i class="fa-solid fa-play" id="ctrlIcon"></i>
+              </div>
+              <div><i class="fa-solid fa-forward"></i></div>
+            </div>
+            <script type="text/javascript">
+              let progress = document.getElementById("progress");
+              let song = document.getElementById("songMusic");
+              let ctrlIcon = document.getElementById("ctrlIcon");
 
-              <!-- Top Singer End -->
+              song.onloadedmetadata = function () {
+                progress.max = song.duration;
+                progress.value = song.currentTime;
+              };
+              function playPause() {
+                if (ctrlIcon.classList.contains("fa-pause")) {
+                  song.pause();
+                  ctrlIcon.classList.remove("fa-pause");
+                  ctrlIcon.classList.add("fa-play");
+                } else {
+                  song.play();
+                  ctrlIcon.classList.add("fa-pause");
+                  ctrlIcon.classList.remove("fa-play");
+                }
+              }
 
-              <!--  -->
-              <script type="text/javascript">
-                function mwam(){
-                  var fileMusik = document.getElementById('songMusic');
-                  fileMusik.setAttribute("src", "audio/Raise Your Flag.mp3");
+              if (song.play()) {
+                setInterval(() => {
+                  progress.value = song.currentTime;
+                }, 500);
+              }
 
-  // var iconMusik = document.getElementById('imgMusic');
-  // iconMusik.setAttribute("src","img/");
-}
-</script>
-<script src="https://kit.fontawesome.com/cdff2ab099.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
+              progress.onchange = function () {
+                song.play();
+                song.currentTime = progress.value;
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+              };
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Singer End -->
+
+    <!--  -->
+    <script type="text/javascript">
+      function mwam() {
+        var fileMusik = document.getElementById("songMusic");
+        fileMusik.setAttribute("src", "audio/Raise Your Flag.mp3");
+
+        // var iconMusik = document.getElementById('imgMusic');
+        // iconMusik.setAttribute("src","img/");
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/cdff2ab099.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <script type="text/javascript">
+      var splide = new Splide("#first-splide", {
+        perPage: 5,
+        focus: 0,
+        omitEnd: true,
+      });
+      splide.mount();
+
+      var splide = new Splide("#second-splide", {
+        perPage: 4,
+        direction: "ttb",
+        height: "18rem",
+        focus: 0,
+        omitEnd: true,
+      });
+      splide.mount();
+    </script>
+  </body>
 </html>
