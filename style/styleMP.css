@@ -337,7 +337,7 @@ nav .circle i {
 
 @media (max-width: 575px) {
   #subMenu .offcanvas-body p{
-  font-size: 4vw;
+  font-size: 3.3vw;
 }
 .offcanvas{
   max-width: 60%;
