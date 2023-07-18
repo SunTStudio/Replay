@@ -494,9 +494,6 @@ hr {
 
 
   @media (max-width: 575px) {
-    .navbar .navbar-nav {
-      display: none;
-    }
     #burger {
       display: block;
     }
