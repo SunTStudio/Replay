@@ -372,6 +372,9 @@ hr {
   #subMenu .offcanvas-body p{
   font-size: 4vw;
 }
+#trending{
+  background-image: url("../img/mwam-sm.png");
+}  
 .offcanvas{
   max-width: 60%;
 }
