@@ -379,6 +379,22 @@ hr {
 
   /* Footer End */
 
+  /* OffCanvas */
+  #subMenu p::after {
+    content: "";
+    display: block;
+    border-bottom: 0.1rem solid white;
+    transform: scaleX(0);
+    transition: 0.5s linear;
+    transform-origin: 0 0;
+  }
+  
+  #subMenu p:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* OffCanvas */
+
 
 @media (max-width: 575px) {
   #header-fix {
