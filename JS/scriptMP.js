@@ -1,3 +1,17 @@
+function mwam(){
+    var fileMusik = document.getElementById('songMusic');
+	fileMusik.setAttribute("src", "audio/Raise Your Flag.mp3");
+
+	var namaMusik = document.getElementById('nameSong');
+	namaMusik.innerHTML = "Raise Your Flag";
+
+	var namaPenyanyi = document.getElementById('nameSinger');
+	namaPenyanyi.innerHTML = "Man With A Mission";
+
+	var iconMusik = document.getElementById('imgMusic');
+	iconMusik.setAttribute("src","img/mwamimg.jpg");
+}
+
 function takSegampangItu(){
 	var fileMusik = document.getElementById('song');
 	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
