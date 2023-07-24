@@ -1,389 +1,421 @@
-function takSegampangItu(){
-	var fileMusik = document.getElementById('song');
-	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
 
-	var namaMusik = document.getElementById('nameSong');
-	namaMusik.innerHTML = "Tak Segampang Itu";
 
-	var namaPenyanyi = document.getElementById('nameSinger');
-	namaPenyanyi.innerHTML = "Anggi Marito";
-
-	var iconMusik = document.getElementById('imgMusic');
-	iconMusik.setAttribute("src","img/Anggi.png");
-}
-function takInginUsai(){
-	var fileMusik = document.getElementById('song');
-	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
-
-	var namaMusik = document.getElementById('nameSong');
-	namaMusik.innerHTML = "Tak Ingin Usai";
-
-	var namaPenyanyi = document.getElementById('nameSinger');
-	namaPenyanyi.innerHTML = "Keisya Levronka";
-
-	var iconMusik = document.getElementById('imgMusic');
-	iconMusik.setAttribute("src","img/keisya.png");
-}
-function doakuUntukmuSayang(){
-	var fileMusik = document.getElementById('song');
-	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
-
-	var namaMusik = document.getElementById('nameSong');
-	namaMusik.innerHTML = "Doaku Untukmu Sayang";
-
-	var namaPenyanyi = document.getElementById('nameSinger');
-	namaPenyanyi.innerHTML = "Wali Band";
-
-	var iconMusik = document.getElementById('imgMusic');
-	iconMusik.setAttribute("src","img/walinagaswara.png");
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0D0D0D;
 }
 
-function sahara(){
-	var fileMusik = document.getElementById('song');
-	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
-
-	var namaMusik = document.getElementById('nameSong');
-	namaMusik.innerHTML = "Sahara";
-
-	var namaPenyanyi = document.getElementById('nameSinger');
-	namaPenyanyi.innerHTML = "Wisnu Shantika";
-
-	var iconMusik = document.getElementById('imgMusic');
-	iconMusik.setAttribute("src","img/wisnushantika.png");
-}
-function banyuLangit(){
-	var fileMusik = document.getElementById('song');
-	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
-
-	var namaMusik = document.getElementById('nameSong');
-	namaMusik.innerHTML = "Banyu Langit";
-
-	var namaPenyanyi = document.getElementById('nameSinger');
-	namaPenyanyi.innerHTML = "Didi Kempot";
-
-	var iconMusik = document.getElementById('imgMusic');
-	iconMusik.setAttribute("src","img/didikempot.png");
-}
-function rapsodi(){
-	var fileMusik = document.getElementById('song');
-	fileMusik.setAttribute("src", "audio/SafeSound.mp3");
-
-	var namaMusik = document.getElementById('nameSong');
-	namaMusik.innerHTML = "Rapsodi";
-
-	var namaPenyanyi = document.getElementById('nameSinger');
-	namaPenyanyi.innerHTML = "JKT48";
-
-	var iconMusik = document.getElementById('imgMusic');
-	iconMusik.setAttribute("src","img/jkt48.png");
+#header-fix {
+  margin: 0 8% 0 8%;
 }
 
-function wali(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Doaku Untukmu Sayang";
+.navbar img {
+  width: 7rem;
+  mix-blend-mode: difference;
+}
 
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Wali";
+#trending{
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+  background-image: url("../img/mwam.png");
+  background-size: cover;
+}
 
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/walinagaswara.png");
+#genre p {
+  cursor: pointer;
+}
 
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Wali";
+#wishlist small{
+  font-size: 0.8vw;
+}
 
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Wali';
-        gambarAlbum[i].setAttribute("src","img/walinagaswara.png");
-    }
+#wishlist strong {
+  font-size: 1.2vw;
+}
 
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listWali = ["Nenekku Pahlawanku","Ya Allah","Harga Diriku","Ada Gajah dibalik Batu","Cari Jodoh","Emang Dasar"];
-        for(var j = 0; j < listWali.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listWali[j];
-            }
-        }
-    }
+.navbar .navbar-nav a:hover {
+  color: white;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid white;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+  transform-origin: 0 0;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/*Music Play*/
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background: rgb(0,0,40);
+  background: radial-gradient(circle, rgba(0,0,40,1) 0%, rgba(2,2,50,1) 50%, rgba(5,3,37,1) 80%, rgba(7,15,51,1) 100%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.music-player{
+  width: 400px;
+  padding: 25px 35px;
+  text-align: center;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+nav .circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color:#fff;
+  box-shadow: 0 5px 10px rgba(255,26,26,0.22);
+}
+nav .circle i{
+  color: #111111;
+}
+.song-img{
+  width: 220px;
+  border-radius: 10%;
+  border:1px solid black;
+  box-shadow: 0 10px 60px rgba(255,26,26,0.22);
+}
+.music-player h1{
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.music-player p{
+  font-size: 14px;
+  color: #fff;
+}
+
+#progress{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 30px 0;
+}
+
+#progress::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  background: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border:8px solid #fff;
+  box-shadow: 0 5px 5px rgba(255,26,26,0.22);
+}
+
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-function jkt48(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Rapsodi";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "JKT48";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/jkt48.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="JKT48";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='JKT48';
-        gambarAlbum[i].setAttribute("src","img/jkt48.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listjkt48 = ["Pajama Drive","Heavy Rotation","Refrain Penuh Harapan","Rapsodi","Fly High","River"];
-        for(var j = 0; j < listjkt48.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listjkt48[j];
-            }
-        }
-    }    
+.controls div{
+  width: 40px;
+  height: 40px;
+  margin: 14px;
+  background: black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 20px #111111;
+}
+.controls div i{
+  color: #fff;
 }
 
-function tulus(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Monokrom";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Tulus";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/tulus.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Tulus";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Tulus';
-        gambarAlbum[i].setAttribute("src","img/tulus.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listTulus = ["Monokrom","Gajah","Hati-Hati di Jalan","Pamit","Interaksi","1000 Tahun Lamanya"];
-        for(var j = 0; j < listTulus.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listTulus[j];
-            }
-        }
-    }
+.controls div:nth-child(2){
+  transform: scale(1.5);
+  background: black;
+  color: #fff;
 }
 
-function bravesboy(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Putuskan Saja Pacarmu";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Bravesboy";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/bravesboy.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Bravesboy";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Bravesboy';
-        gambarAlbum[i].setAttribute("src","img/bravesboy.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listBravesboy = ["Kamu Seperti Jogja","Putuskan Pacarmu","Hukum Aku Tuhan","Cepatlah Mati","Aku Harus Jahat","Putuskan Saja Pacarmu"];
-        for(var j = 0; j < listBravesboy.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listBravesboy[j];
-            }
-        }
-    }
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0d0d0d;
 }
 
-function dennycaknan(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Kartoyono Medot Janji";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Deny Caknan";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/denycaknan.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Deny Caknan";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Deny Caknan';
-        gambarAlbum[i].setAttribute("src","img/denycaknan.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listdenycaknan = ["Kartoyono Medot Janji","Los Dol","Hukum Aku Tuhan","Satru","Kalih Welasku","Crito Mustahil"];
-        for(var j = 0; j < listdenycaknan.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listdenycaknan[j];
-            }
-        }
-    }
+.navbar img {
+  width: 7rem;
+  mix-blend-mode: difference;
 }
 
-function kufaku(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Cuma Kamu";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Kufaku Band";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/kufaku.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Kufaku Band";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Kufaku Band';
-        gambarAlbum[i].setAttribute("src","img/kufaku.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listkufaku = ["Cuma Kamu","Berok Bakau","Cuma Kamu","Berok Bakau","Cuma Kamu","Berok Bakau"];
-        for(var j = 0; j < listkufaku.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listkufaku[j];
-            }
-        }
-    }
+#trending {
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+  background-image: url("../img/mwam.png");
+  background-size: cover;
 }
 
-function feelkoplo(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Terbaik Untukmu";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Feel Koplo";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/feelkoplo.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Feel Koplo";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Feel Koplo';
-        gambarAlbum[i].setAttribute("src","img/feelkoplo.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listfeelkoplo = ["Besok","Los Dol","Hura-Haru","Terbaik Untukmu","Star-Link","Berdiri Teman"];
-        for(var j = 0; j < listfeelkoplo.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listfeelkoplo[j];
-            }
-        }
-    }
+#genre p {
+  cursor: pointer;
 }
 
-function aftershine(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Aku Ikhlas";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Aftershine";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/aftershine.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Aftershine";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Aftershine';
-        gambarAlbum[i].setAttribute("src","img/aftershine.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listaftershine = ["Aku Ikhlas","Yowes Modaro","Tekan Semene","Aku Sing Lungo","Kuatno Atimu","Rakuat Nglakoni"];
-        for(var j = 0; j < listaftershine.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listaftershine[j];
-            }
-        }
-    }
+#wishlist small {
+  font-size: 0.9vw;
 }
 
-function happyasmara(){
-    var namaMusik = document.getElementById("nameSong");
-    namaMusik.innerHTML = "Sadar Posisi";
-
-    var namaPenyanyi = document.getElementById('nameSinger');
-    namaPenyanyi.innerHTML = "Happy Asmara";
-
-    var iconMusik = document.getElementById('imgMusic');
-    iconMusik.setAttribute("src","img/hapyasmara.png");
-
-    var judulAlbum= document.getElementById('albumNama');
-    judulAlbum.innerHTML="Happy Asmara";
-
-    var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-    var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-    for(var i=0; i < penyanyiAlbum.length;i++){
-        penyanyiAlbum[i].innerHTML='Happy Asmara';
-        gambarAlbum[i].setAttribute("src","img/hapyasmara.png");
-    }
-
-    var albumLagu =  document.getElementsByClassName('albumLagu');
-    for(var i = 0; i < albumLagu.length;i++){
-        var listhappyasmara = ["Ngopi Maszeh","Kembang Wangi","Nemen","Rungkad","Dadi Siji","Satu Rasa Cinta"];
-        for(var j = 0; j < listhappyasmara.length;j++){
-            if(i==j){
-                albumLagu[i].innerHTML=listhappyasmara[j];
-            }
-        }
-    }
+#wishlist strong {
+  font-size: 1.2vw;
 }
 
-function ungu(){
-        var namaMusik = document.getElementById("nameSong");
-        namaMusik.innerHTML = "Demi Waktu";
+.navbar .navbar-nav a:hover {
+  color: white;
+}
 
-        var namaPenyanyi = document.getElementById('nameSinger');
-        namaPenyanyi.innerHTML = "Ungu";
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid white;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+  transform-origin: 0 0;
+}
 
-        var iconMusik = document.getElementById('imgMusic');
-        iconMusik.setAttribute("src","img/ungu.png");
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
 
-        var judulAlbum= document.getElementById('albumNama');
-        judulAlbum.innerHTML="Ungu";
+/*Music Play*/
 
-        var penyanyiAlbum= document.getElementsByClassName('penyanyiAlbum');
-        var gambarAlbum= document.getElementsByClassName('gambarAlbum');
-        for(var i=0; i < penyanyiAlbum.length;i++){
-            penyanyiAlbum[i].innerHTML='Ungu';
-            gambarAlbum[i].setAttribute("src","img/ungu.png");
-        }
+.container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background: rgb(0, 0, 40);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 40, 1) 0%,
+    rgba(2, 2, 50, 1) 50%,
+    rgba(5, 3, 37, 1) 80%,
+    rgba(7, 15, 51, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-        var albumLagu =  document.getElementsByClassName('albumLagu');
-        
-        for(var j = 0; j < albumLagu.length;j++){       
-            var listungu = ["Demi Waktu","Sejauh Mungkin","Cinta Dalam Hati","Bismillah Cinta","Andai Ku Tahu","Luka Disini"];
-            albumLagu[j].innerHTML=listungu[j];
-        }
+.music-player {
+  width: 400px;
+  padding: 25px 35px;
+  text-align: center;
+}
 
-    
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+nav .circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
+}
+nav .circle i {
+  color: #111111;
+}
+.song-img {
+  width: 220px;
+  border-radius: 10%;
+  border: 1px solid black;
+  box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
+}
+.music-player h1 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.music-player p {
+  font-size: 14px;
+  color: #fff;
+}
+
+#progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 3rem;
+}
+
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls div {
+  width: 40px;
+  height: 40px;
+  margin: 14px;
+  background: black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 20px #111111;
+}
+.controls div i {
+  color: #fff;
+}
+
+.controls div:nth-child(2) {
+  transform: scale(1.5);
+  background: black;
+  color: #fff;
+}
+
+.splide__arrows--ttb .splide__arrow--prev {
+  top: -2em;
+}
+
+.splide__pagination__page {
+  background: #ccc;
+  border: 0;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin: 3px;
+  opacity: 0.7;
+  padding: 0;
+  position: relative;
+  transition: transform 0.2s linear;
+  width: 8px;
+}
+
+#subMenu .offcanvas-body p{
+  font-size: 0.9vw;
+  cursor: pointer;
+}
+
+#subsMenuHeading{
+  opacity: 80%;
+}
+
+#subMenu a{
+    text-decoration: none;
+    color: white;
+  
+}
+
+
+.offcanvas{
+  max-width: 20%;
+}
+
+#wishlist .text-center p{
+  line-height: 1.2;
+}
+
+/* Footer Start */
+
+.footer {
+  padding: 1.4rem 10%;
+  text-align: center;
+}
+
+.footer > img {
+  justify-content: center;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+hr {
+  border: 1px black solid;
+  margin: 2rem 0;
+}
+
+.footer .footer-buttom {
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+  /* Footer End */
+
+
+@media (max-width: 575px) {
+  #header-fix {
+    margin: 0 0 0 2%;
+  }  
+  
+  #subMenu .offcanvas-body p{
+  font-size: 4vw;
+}
+#trending{
+  background-image: url("../img/mwam-sm.png");
+}
+.offcanvas{
+  max-width: 60%;
+}
+#wishlist .text-center p{
+  line-height: 0.8;
+}
+#wishlist small {
+  font-size: 2vw;
+}
+
+#wishlist strong {
+  font-size: 3vw;
+}
+#topMusic{
+  margin-bottom: 1rem;
+}
+#topMusic p {
+  padding-top: 0.3rem;
+  font-size: 3vw;
+}
+
+#topMusic img{
+  padding-top: 0.45rem;
+}
+#genre{
+  margin-bottom: 1rem;
+}
 }
